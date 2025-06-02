@@ -1027,7 +1027,7 @@
             width: 100%;
         }
 
-        .tech-tag {
+        .skill-tag, .tech-tag {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             color: var(--text-secondary);
             padding: 0.6rem 1.2rem;
@@ -1038,9 +1038,11 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .tech-tag::before {
+        .skill-tag::before, .tech-tag::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1052,13 +1054,14 @@
             z-index: -1;
         }
 
-        .tech-tag:hover {
+        .skill-tag:hover, .tech-tag:hover {
             transform: translateY(-3px) scale(1.05);
             color: white;
             border-color: transparent;
+            text-decoration: none;
         }
 
-        .tech-tag:hover::before {
+        .skill-tag:hover::before, .tech-tag:hover::before {
             left: 0;
         }
 
@@ -1508,14 +1511,14 @@
                 <p>I'm a Master's student in Computer Science at Texas State University with hands-on experience in building scalable web applications, microservices, and machine learning solutions.</p>
                 <p>With experience at companies like Meetomate and Atos, I've worked on everything from OAuth authentication systems to PDF document processing and real-time data pipelines.</p>
                 <div class="skills-grid">
-                    <div class="skill-tag">Java</div>
-                    <div class="skill-tag">Node.js</div>
-                    <div class="skill-tag">React</div>
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">PostgreSQL</div>
-                    <div class="skill-tag">AWS</div>
-                    <div class="skill-tag">Docker</div>
-                    <div class="skill-tag">Redis</div>
+                    <a href="https://www.java.com/" target="_blank" class="skill-tag">Java</a>
+                    <a href="https://nodejs.org/" target="_blank" class="skill-tag">Node.js</a>
+                    <a href="https://reactjs.org/" target="_blank" class="skill-tag">React</a>
+                    <a href="https://www.python.org/" target="_blank" class="skill-tag">Python</a>
+                    <a href="https://www.postgresql.org/" target="_blank" class="skill-tag">PostgreSQL</a>
+                    <a href="https://aws.amazon.com/" target="_blank" class="skill-tag">AWS</a>
+                    <a href="https://www.docker.com/" target="_blank" class="skill-tag">Docker</a>
+                    <a href="https://redis.io/" target="_blank" class="skill-tag">Redis</a>
                 </div>
             </div>
         </div>
@@ -1578,11 +1581,11 @@
                     <h3 class="project-title">Social Media Sentiment Analysis</h3>
                     <p class="project-description">Real-time hate speech detection and sentiment analysis system with data pipeline using Kafka, ElasticSearch, and Kibana visualization.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Kafka</span>
-                        <span class="tech-tag">ElasticSearch</span>
-                        <span class="tech-tag">Kibana</span>
-                        <span class="tech-tag">Docker</span>
+                        <a href="https://www.python.org/" target="_blank" class="tech-tag">Python</a>
+                        <a href="https://kafka.apache.org/" target="_blank" class="tech-tag">Kafka</a>
+                        <a href="https://www.elastic.co/elasticsearch/" target="_blank" class="tech-tag">ElasticSearch</a>
+                        <a href="https://www.elastic.co/kibana/" target="_blank" class="tech-tag">Kibana</a>
+                        <a href="https://www.docker.com/" target="_blank" class="tech-tag">Docker</a>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/moecodeshere" class="project-link" target="_blank">
@@ -1603,11 +1606,11 @@
                     <h3 class="project-title">Artistic Image Generator</h3>
                     <p class="project-description">ML-powered image transformation tool that converts photos into different art styles using Variational Autoencoder achieving 97% accuracy.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">MediaPipe</span>
-                        <span class="tech-tag">Flask</span>
+                        <a href="https://www.python.org/" target="_blank" class="tech-tag">Python</a>
+                        <a href="https://pytorch.org/" target="_blank" class="tech-tag">PyTorch</a>
+                        <a href="https://opencv.org/" target="_blank" class="tech-tag">OpenCV</a>
+                        <a href="https://google.github.io/mediapipe/" target="_blank" class="tech-tag">MediaPipe</a>
+                        <a href="https://flask.palletsprojects.com/" target="_blank" class="tech-tag">Flask</a>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/moecodeshere" class="project-link" target="_blank">
@@ -1628,11 +1631,11 @@
                     <h3 class="project-title">BookHub E-Commerce Platform</h3>
                     <p class="project-description">Full-stack e-commerce platform for books with Spring Boot backend, React frontend, GraphQL APIs, and Stripe payment integration.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">GraphQL</span>
-                        <span class="tech-tag">MongoDB</span>
+                        <a href="https://www.java.com/" target="_blank" class="tech-tag">Java</a>
+                        <a href="https://reactjs.org/" target="_blank" class="tech-tag">React</a>
+                        <a href="https://spring.io/projects/spring-boot" target="_blank" class="tech-tag">Spring Boot</a>
+                        <a href="https://graphql.org/" target="_blank" class="tech-tag">GraphQL</a>
+                        <a href="https://www.mongodb.com/" target="_blank" class="tech-tag">MongoDB</a>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/moecodeshere" class="project-link" target="_blank">
