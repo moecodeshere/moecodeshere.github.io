@@ -191,7 +191,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-primary);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
@@ -200,8 +200,9 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: #00ff88;
             transform: translateY(-2px);
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
         }
 
         .nav-links a::before {
@@ -212,7 +213,7 @@
             transform: translateX(-50%);
             width: 0;
             height: 3px;
-            background: var(--gradient-1);
+            background: linear-gradient(90deg, #00ff88, #667eea);
             transition: width 0.3s ease;
             border-radius: 2px;
         }
@@ -388,6 +389,12 @@
             scale: 0;
         }
 
+        @keyframes expandWidth {
+            to {
+                scale: 1;
+            }
+        }
+
         .about-text h3 {
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
@@ -423,10 +430,6 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 3rem;
             line-height: 1.6;
-        } {
-            to {
-                scale: 1;
-            }
         }
 
         /* Enhanced Experience Section with Dark Theme */
@@ -505,7 +508,7 @@
             background: rgba(0, 255, 136, 0.2);
             border-color: #00ff88;
             color: white;
-        }}
+        }
 
         /* Enhanced About Section */
         .about-content {
@@ -758,37 +761,6 @@
             z-index: 2;
         }
 
-        /* Enhanced About Text */
-        .about-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .about-text p::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.6rem;
-            width: 4px;
-            height: 20px;
-            background: var(--gradient-1);
-            border-radius: 2px;
-        }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -806,6 +778,7 @@
             font-weight: 500;
             transform: scale(0.9);
             transition: transform 0.3s ease;
+            text-decoration: none;
         }
 
         .skill-tag:hover {
@@ -828,21 +801,6 @@
             background: var(--gradient-1);
         }
 
-        .experience-item {
-            position: relative;
-            margin-bottom: 3rem;
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
         .experience-item::before {
             content: '';
             position: absolute;
@@ -853,34 +811,6 @@
             border-radius: 50%;
             background: var(--primary-color);
             border: 3px solid white;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .experience-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .experience-company {
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .experience-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .experience-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
         }
 
         /* Ultra-fancy Projects Section */
@@ -976,6 +906,11 @@
             animation: pulse 3s ease-in-out infinite;
         }
 
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         .project-icon {
             font-size: 5.5rem;
             color: white;
@@ -1027,61 +962,6 @@
             width: 100%;
         }
 
-        .skill-tag, .tech-tag {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            color: var(--text-secondary);
-            padding: 0.6rem 1.2rem;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 2px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .skill-tag::before, .tech-tag::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-3);
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
-
-        .skill-tag:hover, .tech-tag:hover {
-            transform: translateY(-3px) scale(1.05);
-            color: white;
-            border-color: transparent;
-            text-decoration: none;
-        }
-
-        .skill-tag:hover::before, .tech-tag:hover::before {
-            left: 0;
-        }
-
-        .project-content {
-            padding: 2.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .project-description {
             color: var(--text-secondary);
             margin-bottom: 2rem;
@@ -1099,18 +979,39 @@
         .tech-tag {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             color: var(--text-secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
             font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            font-weight: 600;
+            border: 2px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .tech-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-3);
+            transition: left 0.4s ease;
+            z-index: -1;
         }
 
         .tech-tag:hover {
-            transform: translateY(-2px);
-            background: var(--gradient-3);
+            transform: translateY(-3px) scale(1.05);
             color: white;
+            border-color: transparent;
+            text-decoration: none;
+        }
+
+        .tech-tag:hover::before {
+            left: 0;
         }
 
         .project-links {
@@ -1160,13 +1061,6 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        .contact-intro {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            line-height: 1.6;
         }
 
         .contact-info {
@@ -1398,6 +1292,25 @@
             transform: translateY(0);
         }
 
+        /* Enhanced scrolled header */
+        .header.scrolled {
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(30px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Focus states for accessibility */
+        .nav-links a:focus {
+            outline: 2px solid #00ff88;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -1424,6 +1337,83 @@
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .tech-orb {
+                width: 120px;
+                height: 120px;
+            }
+
+            .orb-core {
+                width: 80px;
+                height: 80px;
+            }
+
+            .orbit-ring:nth-child(2) {
+                width: 100px;
+                height: 100px;
+                margin: -50px 0 0 -50px;
+            }
+
+            .orbit-ring:nth-child(3) {
+                width: 120px;
+                height: 120px;
+                margin: -60px 0 0 -60px;
+            }
+
+            .orbit-ring:nth-child(4) {
+                width: 140px;
+                height: 140px;
+                margin: -70px 0 0 -70px;
+            }
+
+            .experience-item {
+                padding: 2rem;
+            }
+
+            .project-content {
+                padding: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .nav {
+                padding: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-card {
+                min-width: auto;
             }
         }
     </style>
@@ -1710,17 +1700,13 @@
             observer.observe(el);
         });
 
-        // Header background on scroll
+        // Enhanced header glow effect on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(15, 15, 35, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 255, 136, 0.2)';
-                header.style.borderBottom = '1px solid rgba(0, 255, 136, 0.3)';
+                header.classList.add('scrolled');
             } else {
-                header.style.background = 'rgba(15, 15, 35, 0.9)';
-                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
-                header.style.borderBottom = '1px solid rgba(102, 126, 234, 0.2)';
+                header.classList.remove('scrolled');
             }
         });
 
@@ -1734,6 +1720,87 @@
                 card.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-navigation');
+        });
+
+        // Optimize animations for reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('*').forEach(el => {
+                el.style.animationDuration = '0.01ms !important';
+                el.style.animationIterationCount = '1 !important';
+                el.style.transitionDuration = '0.01ms !important';
+            });
+        }
+
+        // Performance optimization: pause animations when not visible
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                document.body.style.animationPlayState = 'paused';
+            } else {
+                document.body.style.animationPlayState = 'running';
+            }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        // Enhanced scroll effects for better UX
+        let ticking = false;
+        function updateScrollEffect() {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.header');
+            
+            // Update header opacity based on scroll
+            const headerOpacity = Math.min(0.95, 0.8 + (scrolled / 1000));
+            header.style.background = `rgba(15, 15, 35, ${headerOpacity})`;
+            
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffect);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // Add intersection observer for performance
+        const lazyElements = document.querySelectorAll('.project-card, .experience-item');
+        const lazyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.willChange = 'transform';
+                    lazyObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        lazyElements.forEach(el => lazyObserver.observe(el));
+
+        // Add touch support for mobile devices
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.project-card, .contact-item').forEach(card => {
+                card.addEventListener('touchstart', () => {
+                    card.style.transform = 'scale(0.98)';
+                });
+                
+                card.addEventListener('touchend', () => {
+                    card.style.transform = '';
+                });
+            });
+        }
+
+        console.log('🚀 Portfolio loaded successfully! Built with passion by Mohit Sharma');
     </script>
 </body>
 </html>
